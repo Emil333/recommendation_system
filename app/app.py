@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, json
 import product_pref as product_pref
 import user_pref as user_pref
 import recommendation as recommendation
@@ -23,8 +23,8 @@ def set_product_list():
 @app.route('/get-recommended', methods=['GET'])
 def get_recommended_products():
     # recommendation.get_recommended_product()
-    print(recommendation.get_recommended_product())
-    return 'success'
+    # print(recommendation.get_recommended_product())
+    return recommendation.get_recommended_product()
 
 @app.route('/set-weights', methods=['POST'])
 def set_weights():

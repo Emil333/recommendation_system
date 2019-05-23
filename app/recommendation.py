@@ -1,5 +1,6 @@
 import user_pref
 import product_pref
+import app
 
 weights = []
 sorted_products = {}
@@ -51,4 +52,6 @@ def get_recommended_product():
 
     discount_weight = set_item_weight(max_discount_id)
     sorted_products[max_discount_id] = discount_weight
-    return sorted_products
+    obj = {'recommended': sorted_products}
+
+    return app.json.dumps(obj)
